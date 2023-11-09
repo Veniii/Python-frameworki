@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('bookingcom_web', '0001_initial'),
+        ('booking_com_web', '0001_initial'),
     ]
 
     operations = [

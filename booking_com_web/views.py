@@ -2,9 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Article
 
+
 # Create your views here.
 def test_response(request):
-    return HttpResponse("Przykładowy url")
+    return HttpResponse("To jest przykładowy url")
 
 
 def all_articles(request):
