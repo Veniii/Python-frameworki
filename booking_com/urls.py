@@ -26,4 +26,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('test/', test_response),
     path('booking-com/', include("booking_com_web.urls")),
+
 ]
