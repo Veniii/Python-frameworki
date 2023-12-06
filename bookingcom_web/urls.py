@@ -1,9 +1,9 @@
 from django.urls import path
-from bookingcom_web.views import all_articles
-from bookingcom_web.views import test_response
+from bookingcom_web.views import test_response, all_articles
 
 urlpatterns = [
     path('test/', test_response),
-    path('test/all_articles/', all_articles),
-
+    path('all-articles/', all_articles),
+    # path('list/', index),
+    # path('test/)', index
 ]

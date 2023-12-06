@@ -10,13 +10,12 @@ def test_response(request):
 
 def all_articles(request):
     title_page = "To jest tytuł strony"
+    articles = Article.objects.all()
     options = [
         "option 1",
         "option2",
         "option3"
     ]
-
-    articles = Article.objects.all()
 
     return render(
         request,
@@ -29,5 +28,5 @@ def all_articles(request):
     )
 
 def test_orm(response):
-    query = None
+    query = Article.objects.get(title='Meow')
     return HttpResponse(query)

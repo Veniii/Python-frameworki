@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from bookingcom_web.views import test_response, all_articles
+from bookingcom_web.views import test_response
 from django.conf import settings
 from django.conf.urls.static import static
+from bookingcom_web.views import all_articles
 from bookingcom_web.views import test_orm
 
 urlpatterns = [
@@ -26,5 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('test/', test_response),
     path('booking-com/', include("bookingcom_web.urls")),
-    path('test-orm/', test_orm)
+path("test-orm/", test_orm)
 ]
+
+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
