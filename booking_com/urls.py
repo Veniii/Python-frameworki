@@ -27,7 +27,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('test/', test_response),
     path('booking-com/', include("bookingcom_web.urls")),
-path("test-orm/", test_orm)
+    path("test-orm/", test_orm)
+
 ]
 
 static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
