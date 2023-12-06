@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Article\
+from .models import Article
 from django.urls import path
 from bookingcom_web.views import test_response
 urlpatterns = [

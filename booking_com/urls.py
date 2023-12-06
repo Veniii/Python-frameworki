@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from bookingcom_web import test_response
+from bookingcom_web.views import test_response, all_articles
 
 urlpatterns = [
+    path('', all_articles),
     path('admin/', admin.site.urls),
     path('test/', test_response),
     path('booking-com/', include("bookingcom_web.urls")),
