@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from bookingcom_web.views import test_response, all_articles
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', all_articles),
