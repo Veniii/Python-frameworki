@@ -28,5 +28,5 @@ def all_articles(request):
     )
 
 def test_orm(response):
-    query = Article.objects.get(title='Meow')
+    query = Article.objects.filter(title='Przygoda na Ciebie czeka')
     return HttpResponse(query)
