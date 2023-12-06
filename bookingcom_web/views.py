@@ -27,3 +27,7 @@ def all_articles(request):
             'articles': articles
         }
     )
+
+def test_orm(response):
+    query = None
+    return HttpResponse(query)

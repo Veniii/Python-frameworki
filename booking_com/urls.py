@@ -19,10 +19,12 @@ from django.urls import path, include
 from bookingcom_web.views import test_response, all_articles
 from django.conf import settings
 from django.conf.urls.static import static
+from bookingcom_web.views import test_orm
 
 urlpatterns = [
     path('', all_articles),
     path('admin/', admin.site.urls),
     path('test/', test_response),
     path('booking-com/', include("bookingcom_web.urls")),
+    path('test-orm/', test_orm)
 ]
