@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'styles.css' %}">
-    <link rel="stylesheet" href="{% static 'bookingcom_web.css' %}">
+    <link rel="stylesheet" href="{% static 'booking_com_web.css' %}">
 
     <link href="/dist/output.css" rel="stylesheet">
 
@@ -36,6 +36,37 @@
 <header class="bg-white">
 
 <div class="w-full">
+<!--<nav class="bg-white dark:bg-gray-900">-->
+<!--  <div class="flex flex-wrap items-center space-around p-4">-->
+<!--    <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">-->
+<!--        <span class="sr-only">Open main menu</span>-->
+<!--        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">-->
+<!--            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>-->
+<!--        </svg>-->
+<!--    </button>-->
+<!--    <div>-->
+<!--      <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">-->
+<!--        <li>-->
+<!--          <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</nav>-->
+
+
 <nav>
 
 <div class="navbar">
@@ -43,7 +74,8 @@
     <a href="#loty">Loty</a>
     <a href="#atrakcje">Atrakcje</a>
     <a href="#dla_zwierząt">Dla zwierząt</a>
-    <a href="#kotakt">Kontakt</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="admin">Admin</a>
 </div>
 
 
@@ -61,27 +93,48 @@
 <!--</video>-->
 
 
-<iframe class="full-width-video" src="https://www.youtube.com/embed/SUqriEeOEWQ?si=JxtMHPzuy40RZE6A&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-<br>
+<iframe class="full-width-video" src="https://www.youtube.com/embed/SUqriEeOEWQ?si=JxtMHPzuy40RZE6A?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<h1>Witaj na mojej stronie podróży!</h1>
+{% for article in articles %}
+<p>{{ article }}</p>
+{% endfor %}
 
-<p>Witaj na mojej stronie podróży, miejscu, gdzie dzielę się swoimi doświadczeniami z podróży, poradami i inspiracjami. Mam nadzieję, że znajdziesz tu coś, co zainspiruje Cię do wypróbowania nowych miejsc i doświadczeń!</p>
+<!--{% for article in articles %}
+<p>{{ article.title }}</p>
+<p>{{ article.imgThumb }}</p>
+<hr/>-->
 
-<h2>Moje ostatnie podróże</h2>
+<!--<img src="/media/{{ article.imgThumb }}" alt="{{ article.title }}" title="{{ article.title }}">
+{% endfor %}-->
 
-<p>W ostatnich miesiącach miałem okazję odwiedzić kilka niesamowitych miejsc. Od górskich szlaków w Alpach, przez historyczne miasta Europy, po egzotyczne plaże Azji - każda z tych podróży była niezapomnianym doświadczeniem.</p>
+<!--{% for item in options %}
+<p>{{ item }}</p>
+{% endfor %}-->
 
-<h2>Porady dla podróżników</h2>
+<!--<h1>{{ title }}</h1>
+<h2>Tutaj będą moje artykuły</h2>-->
 
-<p>Podróżowanie może być zarówno ekscytujące, jak i stresujące. Dlatego na mojej stronie znajdziesz wiele porad i wskazówek, które pomogą Ci przygotować się do swojej następnej podróży. Dowiesz się, jak spakować walizkę, jak znaleźć najlepsze oferty lotów, jak poradzić sobie z jet lagiem i wiele więcej.</p>
 
-<h2>Inspiracje do podróży</h2>
 
-<p>Jeśli szukasz inspiracji do swojej następnej podróży, jesteś we właściwym miejscu. Na mojej stronie znajdziesz wiele artykułów i zdjęć z miejsc, które odwiedziłem. Mam nadzieję, że pomogą Ci one znaleźć swoje następne wymarzone miejsce do odwiedzenia!</p>
+<!--<br>-->
+
+<!--<h1>Witaj na mojej stronie podróży!</h1>-->
+
+<!--<p>Witaj na mojej stronie podróży, miejscu, gdzie dzielę się swoimi doświadczeniami z podróży, poradami i inspiracjami. Mam nadzieję, że znajdziesz tu coś, co zainspiruje Cię do wypróbowania nowych miejsc i doświadczeń!</p>-->
+
+<!--<h2>Moje ostatnie podróże</h2>-->
+
+<!--<p>W ostatnich miesiącach miałem okazję odwiedzić kilka niesamowitych miejsc. Od górskich szlaków w Alpach, przez historyczne miasta Europy, po egzotyczne plaże Azji - każda z tych podróży była niezapomnianym doświadczeniem.</p>-->
+
+<!--<h2>Porady dla podróżników</h2>-->
+
+<!--<p>Podróżowanie może być zarówno ekscytujące, jak i stresujące. Dlatego na mojej stronie znajdziesz wiele porad i wskazówek, które pomogą Ci przygotować się do swojej następnej podróży. Dowiesz się, jak spakować walizkę, jak znaleźć najlepsze oferty lotów, jak poradzić sobie z jet lagiem i wiele więcej.</p>-->
+
+<!--<h2>Inspiracje do podróży</h2>-->
+
+<!--<p>Jeśli szukasz inspiracji do swojej następnej podróży, jesteś we właściwym miejscu. Na mojej stronie znajdziesz wiele artykułów i zdjęć z miejsc, które odwiedziłem. Mam nadzieję, że pomogą Ci one znaleźć swoje następne wymarzone miejsce do odwiedzenia!</p>-->
 
 
 
 </body>
-
 </html>
